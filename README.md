@@ -43,7 +43,7 @@ No model for poppler! Instead do this
 ~~~
 #app/models/segmentation.rb
 class Segmentation < ActiveRecord::Base
-  has_and_belongs_to_many :popplers, class_name: 'Channel', join_table: 'ages_segmentations', association_foreign_key: 'age_id'
+  has_and_belongs_to_many :popplers, class_name: 'Channel', join_table: 'popplers_segmentations', association_foreign_key: 'popplers_id'
 end
 
 #app/models/channel.rb
