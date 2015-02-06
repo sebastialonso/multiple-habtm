@@ -9,6 +9,7 @@ There's 3 models:
 Segmentation is the main model for the association, a single segmentation instace:
 
 `has_many :fences`
+
 `has_many :channels`
 
 And in addition,
@@ -26,13 +27,15 @@ As every HABTM, you need a join table
 ~~~
 class PopplersSegmentationsJoinTable < ActiveRecord::Migration
   def change
-    create_table :popplers_segmentation, id: false do |t|
+    create_table :popplers_segmentations, id: false do |t|
       t.integer :poppler_id
       t.integer :segmentation_id
     end
   end
 end
 ~~~
+
+The name of the join table is extremely important. Check [here](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_and_belongs_to_many) for more information.
 
 ###Models
 
